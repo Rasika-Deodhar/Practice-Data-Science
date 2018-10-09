@@ -18,27 +18,17 @@ for iter = 1:num_iters
     %
   
 
-%theta(1) = theta(1) - (alpha/m) * sum((X*theta)-y);
-theta(1) = theta(1) - (alpha/m) * sum((theta(1)+theta(2)*X(:,2))-y);
-%theta(2) = theta(2) - (alpha/m) * sum(((X*theta)-y).*X(:,2));
-theta(2) = theta(2) - (alpha/m) * sum([(theta(1)+theta(2)*X(:,2))-y].*X(:,2));
+theta1 = theta(1) - (alpha/m) * sum((X*theta)-y);
+theta2 = theta(2) - (alpha/m) * sum(((X*theta)-y).*X(:,2));
 
-%theta=[theta(1);theta(2)];
-%-------------------
-
-% x = X(:,2);
-%    h = theta(1) + (theta(2)*x);
-%
-%    theta_zero = theta(1) - alpha * (1/m) * sum(h-y);
-%    theta_one  = theta(2) - alpha * (1/m) * sum((h - y) .* x);
-%
-%    theta = [theta_zero; theta_one];
+theta=[theta1;theta2];
 
     % ============================================================
 
     % Save the cost J in every iteration    
     J_history(iter) = computeCost(X, y, theta);
+    
 
 end
-
+disp(J_history(iter));
 end
