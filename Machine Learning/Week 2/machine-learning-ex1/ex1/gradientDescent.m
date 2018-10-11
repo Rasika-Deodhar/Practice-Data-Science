@@ -30,5 +30,4 @@ theta=[theta1;theta2];
     
 
 end
-disp(J_history(iter));
 end
