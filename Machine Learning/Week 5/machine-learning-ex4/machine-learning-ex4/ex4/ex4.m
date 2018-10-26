@@ -56,7 +56,9 @@ load('ex4weights.mat');
 
 % Unroll parameters 
 nn_params = [Theta1(:) ; Theta2(:)];
-
+disp(size(nn_params));
+disp(size(Theta1));
+disp(size(Theta2));
 %% ================ Part 3: Compute Cost (Feedforward) ================
 %  To the neural network, you should first start by implementing the
 %  feedforward part of the neural network that returns the cost only. You
